@@ -57,7 +57,7 @@ export default function App() {
           <div className="hero-center">
             <div className="hero-divider" />
             <h1 className="hero-name">세종수학전문학원</h1>
-            <p className="hero-sub">초·중·고 수학 전문 · 24년의 교육 열정</p>
+            <p className="hero-sub">수학교육 전문가가 함께합니다</p>
             <a href="tel:043-233-3161" className="hero-cta">수강 상담 신청</a>
           </div>
 
