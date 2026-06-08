@@ -1,6 +1,7 @@
+import { useState, useEffect } from 'react'
 import './App.css'
 
-const classes = [
+const CLASSES = [
   {
     level: '초등반',
     grade: '초등 1 ~ 6학년',
@@ -24,125 +25,92 @@ const classes = [
   },
 ]
 
-function App() {
+export default function App() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <div style={{ fontFamily: 'var(--font-family)', minHeight: '100vh', background: 'var(--off-white)' }}>
+    <div>
+      {/* ── Navigation ── */}
+      <nav className={`site-nav${scrolled ? ' scrolled' : ''}`}>
+        <div className="nav-inner">
+          <span className="nav-logo">세종수학전문학원</span>
+          <a href="tel:043-233-3161" className="nav-tel">043-233-3161</a>
+        </div>
+      </nav>
 
-      {/* 헤더 */}
-      <header style={{
-        background: 'linear-gradient(135deg, var(--dark-blue) 0%, var(--royal-blue) 100%)',
-        color: 'var(--white)',
-        padding: '3rem 2rem',
-      }}>
-        <h1 style={{ fontSize: 'var(--font-size-5xl)', fontWeight: 900, letterSpacing: '-1px' }}>
-          세종수학전문학원
-        </h1>
-        <p style={{
-          fontSize: 'var(--font-size-sm)',
-          color: 'var(--gray-400)',
-          marginTop: '0.5rem',
-        }}>
-          043-233-3161
-        </p>
-      </header>
+      {/* ── Hero ── */}
+      <section className="hero">
+        <div className="hero-inner">
+          {/* FROM 2002 */}
+          <div className="year-block">
+            <span className="year-label">FROM</span>
+            <span className="year-num">2002</span>
+          </div>
 
-      {/* 수업 카테고리 */}
-      <main style={{ padding: '3rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
+          {/* 중앙 텍스트 */}
+          <div className="hero-center">
+            <div className="hero-divider" />
+            <h1 className="hero-name">세종수학전문학원</h1>
+            <p className="hero-sub">초·중·고 수학 전문 · 24년의 교육 열정</p>
+            <a href="tel:043-233-3161" className="hero-cta">수강 상담 신청</a>
+          </div>
 
-        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <h2 style={{
-            fontSize: 'var(--font-size-3xl)',
-            fontWeight: 900,
-            color: 'var(--dark-blue)',
-            marginBottom: '0.5rem',
-          }}>
-            수업 과정
-          </h2>
-          <p style={{ fontSize: 'var(--font-size-lg)', color: 'var(--gray-600)' }}>
-            학년별 맞춤 커리큘럼으로 수학 실력을 완성합니다
-          </p>
+          {/* TO 2026 */}
+          <div className="year-block right">
+            <span className="year-label">TO</span>
+            <span className="year-num">2026</span>
+          </div>
         </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-        }}>
-          {classes.map((cls) => (
-            <div key={cls.level} style={{
-              background: 'var(--white)',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              boxShadow: 'var(--shadow-md)',
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
-              {/* 카드 상단 컬러 배너 */}
-              <div style={{
-                background: cls.color,
-                padding: '1.75rem 1.5rem',
-                color: 'var(--white)',
-              }}>
-                <p style={{
-                  fontSize: 'var(--font-size-sm)',
-                  color: 'rgba(255,255,255,0.7)',
-                  marginBottom: '0.25rem',
-                }}>
-                  {cls.grade}
-                </p>
-                <h3 style={{
-                  fontSize: 'var(--font-size-4xl)',
-                  fontWeight: 900,
-                  letterSpacing: '-0.5px',
-                }}>
-                  {cls.level}
-                </h3>
-              </div>
+        {/* 스크롤 힌트 */}
+        <div className="hero-scroll">
+          <span className="scroll-text">scroll</span>
+          <div className="scroll-bar" />
+        </div>
+      </section>
 
-              {/* 카드 본문 */}
-              <div style={{ padding: '1.5rem', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <p style={{ fontSize: 'var(--font-size-md)', color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                  {cls.desc}
-                </p>
-
-                {/* 주요 학습 영역 태그 */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: 'auto' }}>
-                  {cls.topics.map((topic) => (
-                    <span key={topic} style={{
-                      fontSize: 'var(--font-size-sm)',
-                      padding: '0.3rem 0.75rem',
-                      borderRadius: 'var(--border-radius-full)',
-                      background: 'var(--gray-100)',
-                      color: 'var(--gray-800)',
-                      fontWeight: 500,
-                    }}>
-                      {topic}
-                    </span>
-                  ))}
+      {/* ── 수업 과정 ── */}
+      <section className="classes-section">
+        <div className="section-inner">
+          <div className="section-head">
+            <span className="section-label">Curriculum</span>
+            <h2 className="section-title">수업 과정</h2>
+            <p className="section-desc">학년별 맞춤 커리큘럼으로 수학 실력을 완성합니다</p>
+          </div>
+          <div className="cards">
+            {CLASSES.map((cls) => (
+              <div key={cls.level} className="card">
+                <div className="card-top" style={{ background: cls.color }}>
+                  <p className="card-grade">{cls.grade}</p>
+                  <h3 className="card-level">{cls.level}</h3>
                 </div>
-
-                {/* 상담 신청 버튼 */}
-                <a href={`tel:043-233-3161`} style={{
-                  display: 'block',
-                  textAlign: 'center',
-                  marginTop: '0.5rem',
-                  padding: '0.75rem',
-                  background: 'var(--pink)',
-                  color: 'var(--white)',
-                  fontWeight: 700,
-                  fontSize: 'var(--font-size-md)',
-                  borderRadius: 'var(--border-radius-md)',
-                  transition: 'background 0.2s',
-                }}>
-                  수강 상담 신청
-                </a>
+                <div className="card-body">
+                  <p className="card-desc">{cls.desc}</p>
+                  <div className="card-tags">
+                    {cls.topics.map((t) => (
+                      <span key={t} className="tag">{t}</span>
+                    ))}
+                  </div>
+                  <a href="tel:043-233-3161" className="card-btn">수강 상담 신청</a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="site-footer">
+        <p className="footer-logo">세종수학전문학원</p>
+        <p className="footer-info">Tel. 043-233-3161 · 2002년 개원 · 초·중·고 수학 전문</p>
+        <p className="footer-copy">© 2026 세종수학전문학원. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
-
-export default App
