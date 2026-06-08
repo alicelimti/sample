@@ -1,13 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-const FEATURES = [
-  '쉽고 재미있는 개념완성!',
-  '개인별 맞춤 교재 이용',
-  '매월 월말평가 후 분석표 제공',
-  '오답정리를 통한 완전학습',
-]
-
 const CLASSES = [
   {
     level: '초등반',
@@ -63,7 +56,6 @@ export default function App() {
           </div>
 
           <div className="hero-center">
-            <p className="hero-tagline">수도자를 예방하는 백신</p>
             <div className="hero-divider" />
             <h1 className="hero-name">세종수학전문학원</h1>
             <p className="hero-sub">수학교육 전문가가 함께합니다</p>
@@ -82,20 +74,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── 특징 섹션 ── */}
-      <section className="features-section">
-        <div className="section-inner">
-          <div className="features-badge">개인별 밀착 케어시스템</div>
-          <ul className="features-list">
-            {FEATURES.map((f) => (
-              <li key={f} className="feature-item">
-                <span className="feature-icon">✦</span>
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      {/* 히어로 → 수업 섹션 그라데이션 구분선 */}
+      <div className="section-gradient-divider" />
 
       {/* ── 수업 과정 ── */}
       <section className="classes-section">
@@ -124,23 +104,6 @@ export default function App() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PLAYFACTO 섹션 ── */}
-      <section className="playfacto-section">
-        <div className="section-inner playfacto-inner">
-          <div className="playfacto-left">
-            <p className="playfacto-logo">PlayFACTO</p>
-            <p className="playfacto-sub">수학교구 전문 브랜드</p>
-          </div>
-          <div className="playfacto-right">
-            <p className="playfacto-badge">✔ 전 학년 월말평가테스트 및 오답정리</p>
-            <p className="playfacto-desc">
-              매월 말 테스트를 통해 공부법, 학습노하우, 공부습관 등에 대한 도움으로
-              문제점을 바로 잡고 이끌어 주는 역할을 합니다.
-            </p>
           </div>
         </div>
       </section>
