@@ -1,23 +1,23 @@
 :root {
-  /* 메인 컬러 */
-  --dark-blue: #0d1b3e;
-  --royal-blue: #2153a0;
-  --royal-blue-light: #3a70c2;
-  --royal-blue-dark: #163d7d;
+  /* 메인 컬러 — Arctic Palette */
+  --dark-blue: #1e3a6e;        /* 딥 네이비 */
+  --royal-blue: #3d5a80;       /* 슬레이트 네이비 */
+  --royal-blue-light: #6b8cad; /* 미디엄 블루 */
+  --royal-blue-dark: #152d58;  /* 딥 다크 네이비 */
 
-  /* 포인트 컬러 */
-  --pink: #e84393;
-  --pink-light: #ff6ab5;
-  --pink-dark: #c0307a;
+  /* 포인트 컬러 — Blush Peach */
+  --pink: #c97a6a;             /* 웜 코랄 (CTA) */
+  --pink-light: #f2c4b8;       /* 블러시 피치 (액센트) */
+  --pink-dark: #a85e50;        /* 딥 코랄 (hover) */
 
-  /* 보조 컬러 */
+  /* 보조 컬러 — Icy Blues */
   --white: #ffffff;
-  --off-white: #f4f6fb;
-  --gray-100: #f0f2f7;
-  --gray-200: #e2e6ee;
-  --gray-400: #9aa3b8;
-  --gray-600: #5a6478;
-  --gray-800: #2d3348;
+  --off-white: #edf2f8;        /* 아이시 화이트 */
+  --gray-100: #dbe5f0;         /* 파우더 블루 */
+  --gray-200: #c4d4e6;         /* 라이트 슬레이트 */
+  --gray-400: #8a9fbc;         /* 퍼리윙클 */
+  --gray-600: #4d6480;         /* 미디엄 슬레이트 */
+  --gray-800: #253450;         /* 다크 슬레이트 */
 
   /* 타이포그래피 */
   --font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -49,9 +49,9 @@
   --border-radius-full: 9999px;
 
   /* 그림자 */
-  --shadow-sm: 0 1px 4px rgba(13, 27, 62, 0.08);
-  --shadow-md: 0 4px 16px rgba(13, 27, 62, 0.12);
-  --shadow-lg: 0 8px 32px rgba(13, 27, 62, 0.16);
+  --shadow-sm: 0 1px 4px rgba(30, 58, 110, 0.08);
+  --shadow-md: 0 4px 16px rgba(30, 58, 110, 0.12);
+  --shadow-lg: 0 8px 32px rgba(30, 58, 110, 0.20);
 
   /* 트랜지션 */
   --transition: 0.25s ease;
@@ -63,9 +63,7 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-family);
@@ -76,96 +74,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-button {
-  cursor: pointer;
-  font-family: var(--font-family);
-  border: none;
-  background: none;
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-xl);
-}
-
-.section {
-  padding: var(--spacing-4xl) 0;
-}
-
-.section-title {
-  font-size: var(--font-size-3xl);
-  font-weight: 900;
-  color: var(--dark-blue);
-  margin-bottom: var(--spacing-sm);
-}
-
-.section-subtitle {
-  font-size: var(--font-size-lg);
-  color: var(--gray-600);
-  margin-bottom: var(--spacing-2xl);
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: 0.875rem 2rem;
-  background: var(--pink);
-  color: var(--white);
-  font-size: var(--font-size-md);
-  font-weight: 700;
-  border-radius: var(--border-radius-full);
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-
-.btn-primary:hover {
-  background: var(--pink-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(232, 67, 147, 0.35);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: 0.875rem 2rem;
-  background: transparent;
-  color: var(--white);
-  font-size: var(--font-size-md);
-  font-weight: 700;
-  border: 2px solid var(--white);
-  border-radius: var(--border-radius-full);
-  transition: background var(--transition), color var(--transition);
-}
-
-.btn-secondary:hover {
-  background: var(--white);
-  color: var(--royal-blue);
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-lg);
-  }
-  .section {
-    padding: var(--spacing-3xl) 0;
-  }
-  .section-title {
-    font-size: var(--font-size-2xl);
-  }
-}
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: var(--font-family); border: none; background: none; }

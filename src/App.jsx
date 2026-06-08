@@ -7,21 +7,21 @@ const CLASSES = [
     grade: '초등 1 ~ 6학년',
     desc: '수학의 기초 개념을 탄탄하게 잡아주는 과정입니다. 연산, 도형, 측정 등 핵심 영역을 체계적으로 학습합니다.',
     topics: ['기초 연산', '도형·측정', '규칙과 문제해결'],
-    color: 'var(--royal-blue)',
+    color: 'linear-gradient(135deg, #3d5a80 0%, #4e6e96 100%)',
   },
   {
     level: '중등반',
     grade: '중학 1 ~ 3학년',
     desc: '중학교 수학 전 범위를 내신 중심으로 다집니다. 고등 선행을 위한 개념 완성에 초점을 맞춥니다.',
     topics: ['수와 연산', '방정식·함수', '통계·확률'],
-    color: 'var(--royal-blue-dark)',
+    color: 'linear-gradient(135deg, #2a4a72 0%, #3d5a80 100%)',
   },
   {
     level: '고등반',
     grade: '고등 1 ~ 3학년',
     desc: '수능·내신 완벽 대비 과정입니다. 개념 심화부터 실전 문제풀이까지 단계별로 완성합니다.',
     topics: ['수I·수II', '미적분·확통', '수능 실전'],
-    color: 'var(--dark-blue)',
+    color: 'linear-gradient(135deg, #1e3a6e 0%, #2a4a72 100%)',
   },
 ]
 
@@ -86,7 +86,7 @@ export default function App() {
           <div className="cards">
             {CLASSES.map((cls) => (
               <div key={cls.level} className="card">
-                <div className="card-top" style={{ background: cls.color }}>
+                <div className="card-top" style={{ backgroundImage: cls.color }}>
                   <p className="card-grade">{cls.grade}</p>
                   <h3 className="card-level">{cls.level}</h3>
                 </div>

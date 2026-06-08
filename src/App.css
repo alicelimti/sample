@@ -39,19 +39,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--royal-blue) 100%);
+  background: linear-gradient(160deg, #152d58 0%, #1e3a6e 35%, #2e4e7a 65%, #3d5a80 100%);
   overflow: hidden;
   color: var(--white);
 }
 
-/* graph-paper grid overlay */
+/* icy grid overlay */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    linear-gradient(rgba(184,204,224,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,204,224,0.06) 1px, transparent 1px);
   background-size: 72px 72px;
   pointer-events: none;
 }
@@ -160,7 +160,7 @@
 .hero-cta:hover {
   background: var(--pink-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(232,67,147,0.4);
+  box-shadow: 0 8px 24px rgba(201,122,106,0.45);
 }
 
 /* scroll hint */
@@ -191,7 +191,7 @@
 
 /* ── Classes Section ─────────────────────────────── */
 .classes-section {
-  background: var(--off-white);
+  background: linear-gradient(180deg, var(--off-white) 0%, #e2ecf6 100%);
   padding: 6rem 2rem;
 }
 .section-inner {
