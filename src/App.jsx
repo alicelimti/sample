@@ -108,7 +108,7 @@ export default function App() {
       {/* ── Footer ── */}
       <footer className="site-footer">
         <p className="footer-logo">세종수학전문학원</p>
-        <p className="footer-info">Tel. 043-233-3161 · 2002년 개원 · 초·중·고 수학 전문</p>
+        <p className="footer-info">Tel. 043-233-3161</p>
         <p className="footer-copy">© 2026 세종수학전문학원. All rights reserved.</p>
       </footer>
     </div>
