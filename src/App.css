@@ -317,6 +317,64 @@
 }
 .card-btn:hover { background: var(--pink-dark); }
 
+/* ── Schedule Section ───────────────────────────── */
+.schedule-section {
+  background: linear-gradient(180deg, var(--off-white) 0%, #dce8f4 100%);
+  padding: 6rem 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+.schedule-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.schedule-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+/* 청주관 — 슬레이트 네이비 */
+.schedule-cheongju .schedule-top { background: #3d5a80; }
+/* 세종관 — 딥 네이비 */
+.schedule-sejong .schedule-top  { background: #1e3a6e; }
+/* 보강 — 웜 코랄 */
+.schedule-extra .schedule-top   { background: #c97a6a; }
+
+.schedule-top {
+  padding: 1.5rem 1rem 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.schedule-day {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+.schedule-label {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.05em;
+}
+.schedule-body {
+  padding: 1.25rem 0.75rem;
+  background: var(--white);
+  text-align: center;
+}
+.schedule-location {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
 /* ── Footer ──────────────────────────────────────── */
 .site-footer {
   background: var(--dark-blue);
@@ -389,4 +447,7 @@
   .hero-center { order: -1; }
   .hero-name { font-size: var(--font-size-xl); }
   .classes-section { padding: 4rem 1.25rem; }
+  .schedule-section { padding: 4rem 1.25rem; }
+  .schedule-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .schedule-day { font-size: var(--font-size-3xl); }
 }

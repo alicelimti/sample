@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+const SCHEDULE = [
+  { day: '월', label: '월요일', location: '청주관', type: 'cheongju' },
+  { day: '화', label: '화요일', location: '세종관',  type: 'sejong'   },
+  { day: '수', label: '수요일', location: '청주관', type: 'cheongju' },
+  { day: '목', label: '목요일', location: '세종관',  type: 'sejong'   },
+  { day: '금', label: '금요일', location: '청주관', type: 'cheongju' },
+  { day: '토', label: '토요일', location: '보강',   type: 'extra'    },
+]
+
 const CLASSES = [
   {
     level: '초등반',
@@ -108,6 +117,30 @@ export default function App() {
                       playfacto블로그
                     </a>
                   )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 수업 시간표 ── */}
+      <section className="schedule-section">
+        <div className="section-inner">
+          <div className="section-head">
+            <span className="section-label">Schedule</span>
+            <h2 className="section-title">수업 시간표</h2>
+            <p className="section-desc">주간 수업 일정 안내</p>
+          </div>
+          <div className="schedule-grid">
+            {SCHEDULE.map((s) => (
+              <div key={s.day} className={`schedule-card schedule-${s.type}`}>
+                <div className="schedule-top">
+                  <span className="schedule-day">{s.day}</span>
+                  <span className="schedule-label">{s.label}</span>
+                </div>
+                <div className="schedule-body">
+                  <p className="schedule-location">{s.location}</p>
                 </div>
               </div>
             ))}
