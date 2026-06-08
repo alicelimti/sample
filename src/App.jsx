@@ -30,17 +30,17 @@ function App() {
 
       {/* 헤더 */}
       <header style={{
-        background: 'var(--dark-blue)',
+        background: 'linear-gradient(135deg, var(--dark-blue) 0%, var(--royal-blue) 100%)',
         color: 'var(--white)',
-        padding: '1.5rem 2rem',
+        padding: '3rem 2rem',
       }}>
-        <h1 style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 900 }}>
+        <h1 style={{ fontSize: 'var(--font-size-5xl)', fontWeight: 900, letterSpacing: '-1px' }}>
           세종수학전문학원
         </h1>
         <p style={{
           fontSize: 'var(--font-size-sm)',
           color: 'var(--gray-400)',
-          marginTop: '0.35rem',
+          marginTop: '0.5rem',
         }}>
           043-233-3161
         </p>
