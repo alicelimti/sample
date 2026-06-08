@@ -8,6 +8,7 @@ const CLASSES = [
     brand: 'PLAYFACTO',
     desc: '플레이팩토를 활용한 재밌는 교구수학\n교과수학 + 교구수학으로\n탄탄한 기초 다지기',
     topics: ['교구수학', '교과수학', '기초 다지기'],
+    blog: 'https://blog.naver.com/playfacto4977',
     color: 'linear-gradient(135deg, #3d5a80 0%, #4e6e96 100%)',
   },
   {
@@ -16,6 +17,7 @@ const CLASSES = [
     brand: '',
     desc: '자기주도학습 능력을 향상시키는 맞춤 솔루션\n2학기 난해한 도형 단원\n완벽 정복',
     topics: ['자기주도학습', '도형 완벽 정복', '내신 대비'],
+    blog: '',
     color: 'linear-gradient(135deg, #2a4a72 0%, #3d5a80 100%)',
   },
   {
@@ -24,6 +26,7 @@ const CLASSES = [
     brand: '',
     desc: '개별 맞춤 교재로 어려운 수학을 쉽고 재미있게\n내신부터 수능까지 커버',
     topics: ['맞춤 교재', '내신 대비', '수능 완성'],
+    blog: '',
     color: 'linear-gradient(135deg, #1e3a6e 0%, #2a4a72 100%)',
   },
 ]
@@ -100,7 +103,11 @@ export default function App() {
                       <span key={t} className="tag">{t}</span>
                     ))}
                   </div>
-                  <a href="tel:043-233-3161" className="card-btn">수강 상담 신청</a>
+                  {cls.blog && (
+                    <a href={cls.blog} target="_blank" rel="noopener noreferrer" className="card-btn">
+                      playfacto블로그
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
