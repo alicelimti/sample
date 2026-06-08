@@ -1,29 +1,36 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+const FEATURES = [
+  '쉽고 재미있는 개념완성!',
+  '개인별 맞춤 교재 이용',
+  '매월 월말평가 후 분석표 제공',
+  '오답정리를 통한 완전학습',
+]
+
 const CLASSES = [
   {
     level: '초등반',
     grade: '초등 1 ~ 6학년',
     brand: 'PLAYFACTO',
-    desc: '초등 교구수학으로 수학의 시작을 탄탄하게 합니다.',
-    topics: ['기초 연산', '도형·측정', '규칙과 문제해결'],
+    desc: '플레이팩토를 활용한 재밌는 교구수학\n교과수학 + 교구수학으로\n탄탄한 기초 다지기',
+    topics: ['교구수학', '교과수학', '기초 다지기'],
     color: 'linear-gradient(135deg, #3d5a80 0%, #4e6e96 100%)',
   },
   {
     level: '중등반',
     grade: '중학 1 ~ 3학년',
     brand: '',
-    desc: '중학교 수학 전 범위를 내신 중심으로 다집니다. 고등 선행을 위한 개념 완성에 초점을 맞춥니다.',
-    topics: ['수와 연산', '방정식·함수', '통계·확률'],
+    desc: '자기주도학습 능력을 향상시키는 맞춤 솔루션\n2학기 난해한 도형 단원\n완벽 정복',
+    topics: ['자기주도학습', '도형 완벽 정복', '내신 대비'],
     color: 'linear-gradient(135deg, #2a4a72 0%, #3d5a80 100%)',
   },
   {
     level: '고등반',
     grade: '고등 1 ~ 3학년',
     brand: '',
-    desc: '수능·내신 완벽 대비 과정입니다. 개념 심화부터 실전 문제풀이까지 단계별로 완성합니다.',
-    topics: ['수I·수II', '미적분·확통', '수능 실전'],
+    desc: '개별 맞춤 교재로 어려운 수학을 쉽고 재미있게\n내신부터 수능까지 커버',
+    topics: ['맞춤 교재', '내신 대비', '수능 완성'],
     color: 'linear-gradient(135deg, #1e3a6e 0%, #2a4a72 100%)',
   },
 ]
@@ -50,31 +57,43 @@ export default function App() {
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero-inner">
-          {/* FROM 2002 */}
           <div className="year-block">
             <span className="year-label">FROM</span>
             <span className="year-num">2002</span>
           </div>
 
-          {/* 중앙 텍스트 */}
           <div className="hero-center">
+            <p className="hero-tagline">수도자를 예방하는 백신</p>
             <div className="hero-divider" />
             <h1 className="hero-name">세종수학전문학원</h1>
             <p className="hero-sub">수학교육 전문가가 함께합니다</p>
             <a href="tel:043-233-3161" className="hero-cta">수강 상담 신청</a>
           </div>
 
-          {/* TO 2026 */}
           <div className="year-block right">
             <span className="year-label">TO</span>
             <span className="year-num">2026</span>
           </div>
         </div>
 
-        {/* 스크롤 힌트 */}
         <div className="hero-scroll">
           <span className="scroll-text">scroll</span>
           <div className="scroll-bar" />
+        </div>
+      </section>
+
+      {/* ── 특징 섹션 ── */}
+      <section className="features-section">
+        <div className="section-inner">
+          <div className="features-badge">개인별 밀착 케어시스템</div>
+          <ul className="features-list">
+            {FEATURES.map((f) => (
+              <li key={f} className="feature-item">
+                <span className="feature-icon">✦</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -109,10 +128,28 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── PLAYFACTO 섹션 ── */}
+      <section className="playfacto-section">
+        <div className="section-inner playfacto-inner">
+          <div className="playfacto-left">
+            <p className="playfacto-logo">PlayFACTO</p>
+            <p className="playfacto-sub">수학교구 전문 브랜드</p>
+          </div>
+          <div className="playfacto-right">
+            <p className="playfacto-badge">✔ 전 학년 월말평가테스트 및 오답정리</p>
+            <p className="playfacto-desc">
+              매월 말 테스트를 통해 공부법, 학습노하우, 공부습관 등에 대한 도움으로
+              문제점을 바로 잡고 이끌어 주는 역할을 합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Footer ── */}
       <footer className="site-footer">
         <p className="footer-logo">세종수학전문학원</p>
         <p className="footer-info">Tel. 043-233-3161</p>
+        <p className="footer-addr">개신동 농협사거리 갤러리타워 2층</p>
         <p className="footer-copy">© 2026 세종수학전문학원. All rights reserved.</p>
       </footer>
     </div>
