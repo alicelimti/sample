@@ -6,15 +6,18 @@ function App() {
       <header style={{
         background: 'var(--dark-blue)',
         color: 'var(--white)',
-        padding: '1rem 2rem',
-        textAlign: 'center',
+        padding: '1.5rem 2rem',
         fontFamily: 'var(--font-family)',
       }}>
         <h1 style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 900 }}>
-          수학 전문학원
+          세종수학전문학원
         </h1>
-        <p style={{ color: 'var(--pink)', marginTop: '0.5rem' }}>
-          2002년 개원 · 초중고 수학 전문
+        <p style={{
+          fontSize: 'var(--font-size-sm)',
+          color: 'var(--gray-400)',
+          marginTop: '0.35rem',
+        }}>
+          043-233-3161
         </p>
       </header>
       <main style={{
